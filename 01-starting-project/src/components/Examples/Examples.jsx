@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CORE_CONCEPTS, EXAMPLES } from "../../data.js";
 import Section from "../Section.jsx";
+import Tabs from "../Tabs.jsx";
 import TabButton from "../TabButton/TabButton.jsx";
 
 export default function Examples(props) {
@@ -28,8 +29,8 @@ export default function Examples(props) {
       className="examples"
       data-testid="examples"
     >
-      <menu>
-        {CORE_CONCEPTS.map((item, idx) => (
+      <Tabs
+        buttons={CORE_CONCEPTS.map((item, idx) => (
           <TabButton
             isSelected={content === item.title.toLowerCase()}
             onClick={() => ClickHandler(item.title)}
@@ -38,9 +39,9 @@ export default function Examples(props) {
             {item.title}
           </TabButton>
         ))}
-      </menu>
-
-      <div id="tab-content">{tabContent}</div>
+      >
+        <div id="tab-content">{tabContent}</div>
+      </Tabs>
     </Section>
   );
 }
