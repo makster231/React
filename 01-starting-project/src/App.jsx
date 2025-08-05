@@ -6,7 +6,7 @@ import { CORE_CONCEPTS, EXAMPLES } from "./data.js";
 import { useState } from "react";
 
 function App() {
-  let [content, setContent] = useState("components");
+  let [content, setContent] = useState("Components");
 
   function ClickHandler(title) {
     title = title.toLowerCase();
